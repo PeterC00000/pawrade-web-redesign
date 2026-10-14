@@ -75,13 +75,13 @@
 .pp-btn-outline{background:#fff;color:var(--blue-d);border-color:var(--blue)}.pp-btn-outline:hover{background:var(--blue);color:#fff}
 .pp-stars{color:var(--amber);letter-spacing:2px}
 /* hero: slide 5 */
-.pp-hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:#fff;background:var(--slate);padding:clamp(80px,11vw,160px) 0 clamp(70px,9vw,130px)!important}
+.pp-hero{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:clamp(480px,62vh,640px);text-align:center;color:#fff;background:var(--slate);padding:clamp(56px,7vw,96px) 0!important}
 .pp-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.pp-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(32,48,70,.78),rgba(34,66,98,.7) 55%,rgba(30,52,76,.86))}
+.pp-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(36,56,82,.5),rgba(30,58,88,.55) 60%,rgba(28,48,70,.7))}
 .pp-hero h1{color:#fff;text-transform:uppercase;font-size:clamp(38px,7.4vw,96px);letter-spacing:-.025em;line-height:1.04;max-width:11em;margin:0 auto}
 .pp-hero h1 em{font-style:normal;background:linear-gradient(90deg,#90f6ef,#8fd8f5 55%,#c1e4f8);-webkit-background-clip:text;background-clip:text;color:transparent}
-.pp-hero .pp-sub{color:#fff;margin:clamp(20px,3vw,32px) auto clamp(28px,3vw,40px)}
-.pp-rate{margin-top:24px;font-size:15px;color:#e1e9ef}
+.pp-hero .pp-w{display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2.4vw,28px)}.pp-hero .pp-sub{color:#fff;margin:0}.pp-hero h1{text-shadow:0 2px 24px rgba(20,34,52,.45)}
+.pp-rate{margin:0;font-size:15px;color:#e1e9ef}
 /* video */
 .pp-video{background:#fff;padding-bottom:clamp(40px,5vw,70px)!important}
 .pp-vhead{text-align:center;margin-bottom:28px}.pp-vhead h2{font-size:clamp(26px,3.4vw,42px)}
@@ -152,6 +152,14 @@
  .pp-dream .d{display:none}.pp-found{grid-template-columns:1fr}.pp-play{width:68px;height:68px}.pp-play::after{left:28px;top:20px;border-left-width:22px;border-top-width:14px;border-bottom-width:14px}
 }
 @media (prefers-reduced-motion:reduce){.pp *{transition:none!important;animation:none!important}}
+.pp-blue{scroll-margin-top:90px;padding-top:clamp(44px,5vw,72px)!important}
+.pp-blue .pp-h2{max-width:none;font-size:clamp(28px,3.6vw,46px)}
+.pp-flow{margin-top:32px}
+.pp-tabs{min-height:440px}.pp-view,.pp-panel{min-height:440px}
+.pp-panel img{min-height:0;height:100%}
+.pp-fine{margin-top:40px}
+@media (max-width:1000px){.pp-tabs,.pp-view,.pp-panel{min-height:0}.pp-panel img{height:auto}}
+.pp .pp-fine{margin-top:44px}
 </style>
 </head>
 <body>
@@ -330,7 +338,7 @@
 
 <!-- 1 · HERO (slide 5) -->
 <section class="pp-hero">
-  <img src="img/puppies-in-arms.jpg" alt="" width="1366" height="768" fetchpriority="high" />
+  <img src="/our-process/img/puppies-in-arms.jpg" alt="" width="1366" height="768" fetchpriority="high" />
   <div class="pp-w">
     <h1>It’s <em>easy</em> to choose a <em>Pawrade puppy.</em></h1>
     <p class="pp-sub">A simple, proven process with real people beside you, from your first click to your first night home.</p>
@@ -355,10 +363,10 @@
   <div class="pp-w">
     <h2 class="pp-h2">A process built to feel easy.</h2>
     <div class="pp-vals">
-      <div class="pp-val"><img src="img/found-1.jpg" alt="A man holding his new Cavalier puppy" loading="lazy" /><div><h3>Real people, real answers</h3><p>Talk to your breeder and to Pawrade, by message, call or text, every day.</p></div></div>
-      <div class="pp-val"><img src="img/shihtzu-breeder.webp" alt="A breeder with a litter of Shih Tzu puppies" loading="lazy" /><div><h3>Breeders we know</h3><p>Every Pawrade breeder is personally verified and reviewed each year.</p></div></div>
-      <div class="pp-val"><img src="img/found-3.jpg" alt="A woman with her new Yorkie puppy" loading="lazy" /><div><h3>A healthy start</h3><p>A licensed-vet check-up before travel and a 3-year Health Guarantee.</p></div></div>
-      <div class="pp-val"><img src="img/found-4.jpg" alt="A young man with his new Golden Retriever puppy" loading="lazy" /><div><h3>Tried and true since 2003</h3><p>Over 18,000 verified families have brought their puppy home with us.</p></div></div>
+      <div class="pp-val"><img src="/our-process/img/found-1.jpg" alt="A man holding his new Cavalier puppy" loading="lazy" /><div><h3>Real people, real answers</h3><p>Talk to your breeder and to Pawrade, by message, call or text, every day.</p></div></div>
+      <div class="pp-val"><img src="/our-process/img/shihtzu-breeder.webp" alt="A breeder with a litter of Shih Tzu puppies" loading="lazy" /><div><h3>Breeders we know</h3><p>Every Pawrade breeder is personally verified and reviewed each year.</p></div></div>
+      <div class="pp-val"><img src="/our-process/img/found-3.jpg" alt="A woman with her new Yorkie puppy" loading="lazy" /><div><h3>A healthy start</h3><p>A licensed-vet check-up before travel and a 3-year Health Guarantee.</p></div></div>
+      <div class="pp-val"><img src="/our-process/img/found-4.jpg" alt="A young man with his new Golden Retriever puppy" loading="lazy" /><div><h3>Tried and true since 2003</h3><p>Over 18,000 verified families have brought their puppy home with us.</p></div></div>
     </div>
   </div>
 </section>
@@ -375,19 +383,19 @@
 <button class="pp-step" type="button" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false"><b>5</b><span>Home</span></button>
 </div>
       <div class="pp-view"><article class="pp-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
-      <img src="img/specialist-couple.webp" alt="A smiling couple with their new puppy" width="640" height="480" loading="lazy" />
+      <img src="/our-process/img/specialist-couple.webp" alt="A smiling couple with their new puppy" width="640" height="480" loading="lazy" />
       <div><p class="pp-kick">Step 1 · Find</p><h3>Find the one that fits your home.</h3><p>Browse thousands of puppies from Pawrade breeders. Ask the breeder and a Pawrade puppy expert anything in one place, or call and text a real person every day.</p><div class="pp-chips"><span>10,600+ puppies to browse</span><span>Real people, 9AM–11PM EST</span></div></div></article>
 <article class="pp-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
-      <img src="img/found-2.jpg" alt="Two women holding their Cavapoo puppies" width="640" height="480" loading="lazy" />
+      <img src="/our-process/img/found-2.jpg" alt="Two women holding their Cavapoo puppies" width="640" height="480" loading="lazy" />
       <div><p class="pp-kick">Step 2 · Reserve</p><h3>Reserve with total confidence.</h3><p>One secure checkout with flexible ways to pay. Your breeder is paid after your puppy arrives, so you can say yes without second-guessing.</p><div class="pp-chips"><span>Card, Apple Pay or Klarna</span><span>Paid when your puppy arrives</span></div></div></article>
 <article class="pp-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
-      <img src="img/yorkie.jpg" alt="A Yorkie puppy resting in a hand" width="640" height="480" loading="lazy" />
+      <img src="/our-process/img/yorkie.jpg" alt="A Yorkie puppy resting in a hand" width="640" height="480" loading="lazy" />
       <div><p class="pp-kick">Step 3 · Prepare</p><h3>A vet check-up before the trip.</h3><p>A licensed veterinarian examines your puppy before travel, and your personal Advocate walks you through the results and gets you ready for arrival.</p><div class="pp-chips"><span>Licensed-vet exam</span><span>One Advocate, start to finish</span></div></div></article>
 <article class="pp-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
-      <img src="img/puppy-in-cabin.webp" alt="A Pomeranian puppy in an in-cabin carrier" width="640" height="480" loading="lazy" />
+      <img src="/our-process/img/puppy-in-cabin.webp" alt="A Pomeranian puppy in an in-cabin carrier" width="640" height="480" loading="lazy" />
       <div><p class="pp-kick">Step 4 · Travel</p><h3>Your puppy never travels alone.</h3><p>Choose pick-up, a ground nanny, a flight nanny or an in-cabin chaperone. You get updates the whole way and a photo moment at the door.</p><div class="pp-chips"><span>Four ways home</span><span>Updates every step</span></div></div></article>
 <article class="pp-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
-      <img src="img/golden-woman.jpg" alt="A woman petting her golden retriever" width="640" height="480" loading="lazy" />
+      <img src="/our-process/img/golden-woman.jpg" alt="A woman petting her golden retriever" width="640" height="480" loading="lazy" />
       <div><p class="pp-kick">Step 5 · Home</p><h3>We’re still with you after day one.</h3><p>Your puppy comes home with a 3-year Health Guarantee, extendable to age 10, plus a month of pet insurance. Our team is a call away whenever you have a question.</p><div class="pp-chips"><span>Up to 10 years of coverage</span><span>Support when you need it</span></div></div></article>
 </div>
     </div>
@@ -397,7 +405,7 @@
 
 <!-- 5 · TRACK RECORD (slide 10-style reviews over photo, slide 8) -->
 <section class="pp-track">
-  <img src="img/gsd-pumpkin.webp" alt="" loading="lazy" />
+  <img src="/our-process/img/gsd-pumpkin.webp" alt="" loading="lazy" />
   <div class="pp-w pp-c">
     <h2>Our track record</h2>
     <div class="pp-stats">
@@ -417,10 +425,10 @@
 <section>
   <div class="pp-w">
     <div class="pp-found">
-      <img class="f1" src="img/found-1.jpg" alt="A man holding a Cavalier puppy" loading="lazy" />
-      <img class="f2" src="img/found-2.jpg" alt="Two women with their Cavapoo puppies" loading="lazy" />
-      <img class="f3" src="img/found-3.jpg" alt="A woman with a Yorkie puppy at the airport" loading="lazy" />
-      <img class="f4" src="img/found-4.jpg" alt="A young man with a Golden Retriever puppy" loading="lazy" />
+      <img class="f1" src="/our-process/img/found-1.jpg" alt="A man holding a Cavalier puppy" loading="lazy" />
+      <img class="f2" src="/our-process/img/found-2.jpg" alt="Two women with their Cavapoo puppies" loading="lazy" />
+      <img class="f3" src="/our-process/img/found-3.jpg" alt="A woman with a Yorkie puppy at the airport" loading="lazy" />
+      <img class="f4" src="/our-process/img/found-4.jpg" alt="A young man with a Golden Retriever puppy" loading="lazy" />
       <div class="f5"><h2>They found theirs on Pawrade.</h2><a class="pp-btn pp-btn-outline" href="https://www.pawrade.com/puppies/">View available puppies</a></div>
     </div>
   </div>
@@ -428,8 +436,8 @@
 
 <!-- 7 · CLOSING CTA (slide 15) -->
 <section class="pp-dream">
-  <img class="d a" src="img/pup-shihtzu.webp" alt="" loading="lazy" /><img class="d b" src="img/pup-cavapoo.webp" alt="" loading="lazy" />
-  <img class="d c" src="img/pup-yorkie.webp" alt="" loading="lazy" /><img class="d e" src="img/pup-goldendoodle.webp" alt="" loading="lazy" />
+  <img class="d a" src="/our-process/img/pup-shihtzu.webp" alt="" loading="lazy" /><img class="d b" src="/our-process/img/pup-cavapoo.webp" alt="" loading="lazy" />
+  <img class="d c" src="/our-process/img/pup-yorkie.webp" alt="" loading="lazy" /><img class="d e" src="/our-process/img/pup-goldendoodle.webp" alt="" loading="lazy" />
   <div class="pp-w pp-c">
     <h2>Ready to meet your puppy?</h2>
     <p>Browse, ask and reserve with Pawrade beside you every step of the way.</p>
@@ -601,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   tabs.forEach(function (t, i) {
     t.tabIndex = i === 0 ? 0 : -1;
-    t.addEventListener('click', function () { show(t); });
+    t.addEventListener('click', function () { show(t); if (window.matchMedia('(max-width:1000px)').matches) document.querySelector('#steps').scrollIntoView({behavior:'smooth',block:'start'}); });
     t.addEventListener('keydown', function (e) {
       var n = tabs.indexOf(t);
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); show(tabs[(n + 1) % tabs.length], true); }
