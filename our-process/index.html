@@ -160,6 +160,32 @@
 .pp-fine{margin-top:40px}
 @media (max-width:1000px){.pp-tabs,.pp-view,.pp-panel{min-height:0}.pp-panel img{height:auto}}
 .pp .pp-fine{margin-top:44px}
+
+/* brand fixes */
+.pp-cream{background:var(--tint)}
+.pp-cream .pp-h2,.pp-val h3{color:var(--slate)}.pp-val p{color:var(--ink)}
+.pp-val{background:#fff;box-shadow:0 8px 24px rgba(51,65,79,.08)}
+.pp-step{border:0;border-radius:16px;background:#fff;color:var(--slate);box-shadow:0 6px 16px rgba(0,60,90,.18)}
+.pp-step b{background:var(--blue);color:#fff}
+.pp-step:hover{background:var(--tint)}
+.pp-step.on{background:var(--slate);color:#fff}.pp-step.on b{background:#fff;color:var(--slate)}
+/* stacked panels: container is as tall as the tallest, so clicking never shifts the page */
+.pp-tabs{min-height:0}
+.pp-view{display:grid;overflow-anchor:none}.pp-view,.pp-panel{min-height:0}
+.pp-panel{grid-area:1/1;position:relative;visibility:hidden;opacity:0;animation:none;height:auto}
+.pp-panel[data-on]{visibility:visible;opacity:1;animation:ppin .35s ease}
+.pp-panel[hidden]{display:grid}
+.pp-more{align-self:flex-start;margin-top:8px;min-height:50px;padding:0 30px;border:0;border-radius:999px;background:var(--blue);color:#fff;font:600 16px/1 var(--body);cursor:pointer;transition:background-color .18s,transform .18s}
+.pp-more:hover{background:var(--blue-d);transform:translateY(-2px)}
+.pp-over{position:absolute;inset:0;background:#33414f;color:#fff;transform:translateY(101%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;overflow:auto;z-index:2}
+.pp-panel.open .pp-over{transform:none}
+.pp-over>div{padding:clamp(24px,4vw,48px);width:100%}
+.pp-over h4{font:800 clamp(22px,2.4vw,30px)/1.15 var(--head);color:#fff;margin:0 0 16px}
+.pp-over ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px}
+.pp-over li{display:flex;gap:12px;font-size:16px;color:#fff;line-height:1.5}.pp-over li::before{content:"✓";color:#8fd8f5;font-weight:800}
+.pp-close{min-height:46px;padding:0 26px;border-radius:999px;border:2px solid #fff;background:transparent;color:#fff;font:600 15px/1 var(--body);cursor:pointer}.pp-close:hover{background:#fff;color:var(--slate)}
+@media (max-width:1000px){.pp-panel img{height:auto;aspect-ratio:16/10}}
+@media (prefers-reduced-motion:reduce){.pp-over{transition:none}}
 </style>
 </head>
 <body>
@@ -382,21 +408,26 @@
 <button class="pp-step" type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false"><b>4</b><span>Travel</span></button>
 <button class="pp-step" type="button" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false"><b>5</b><span>Home</span></button>
 </div>
-      <div class="pp-view"><article class="pp-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+      <div class="pp-view"><article class="pp-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" data-on>
       <img src="/our-process/img/specialist-couple.webp" alt="A smiling couple with their new puppy" width="640" height="480" loading="lazy" />
-      <div><p class="pp-kick">Step 1 · Find</p><h3>Find the one that fits your home.</h3><p>Browse thousands of puppies from Pawrade breeders. Ask the breeder and a Pawrade puppy expert anything in one place, or call and text a real person every day.</p><div class="pp-chips"><span>10,600+ puppies to browse</span><span>Real people, 9AM–11PM EST</span></div></div></article>
-<article class="pp-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+      <div><p class="pp-kick">Step 1 · Find</p><h3>Find the one that fits your home.</h3><p>Browse thousands of puppies from Pawrade breeders. Ask the breeder and a Pawrade puppy expert anything in one place, or call and text a real person every day.</p><button class="pp-more" type="button" aria-expanded="false" aria-controls="more-1">Learn more</button></div>
+      <div class="pp-over" id="more-1" aria-hidden="true" inert><div><h4>Find: the details</h4><ul><li>Browse, favorite and ask questions on any listing. The breeder and Pawrade puppy associates reply together in one message center.</li><li>Prefer to talk? Call or text (888) 729-8812, daily 9AM–11PM EST. Phone, SMS or email, your choice.</li><li>A specialist matches breed, budget and timing to your household.</li><li>Every message is logged between you, the breeder and Pawrade, so nothing is off the record.</li></ul><button class="pp-close" type="button">Close</button></div></div></article>
+<article class="pp-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
       <img src="/our-process/img/found-2.jpg" alt="Two women holding their Cavapoo puppies" width="640" height="480" loading="lazy" />
-      <div><p class="pp-kick">Step 2 · Reserve</p><h3>Reserve with total confidence.</h3><p>One secure checkout with flexible ways to pay. Your breeder is paid after your puppy arrives, so you can say yes without second-guessing.</p><div class="pp-chips"><span>Card, Apple Pay or Klarna</span><span>Paid when your puppy arrives</span></div></div></article>
-<article class="pp-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+      <div><p class="pp-kick">Step 2 · Reserve</p><h3>Reserve with total confidence.</h3><p>One secure checkout with flexible ways to pay. Your breeder is paid after your puppy arrives, so you can say yes without second-guessing.</p><button class="pp-more" type="button" aria-expanded="false" aria-controls="more-2">Learn more</button></div>
+      <div class="pp-over" id="more-2" aria-hidden="true" inert><div><h4>Reserve: the details</h4><ul><li>Complete one short Buyer Questionnaire. It travels with every inquiry so breeders can match you well.</li><li>Reserve on PetPay.com with a card, Apple Pay, Google Pay, Klarna in 4 installments, or financing.</li><li>A person reviews every order before it is confirmed.</li><li>Your breeder is paid after you confirm your puppy’s arrival with a photo.</li></ul><button class="pp-close" type="button">Close</button></div></div></article>
+<article class="pp-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
       <img src="/our-process/img/yorkie.jpg" alt="A Yorkie puppy resting in a hand" width="640" height="480" loading="lazy" />
-      <div><p class="pp-kick">Step 3 · Prepare</p><h3>A vet check-up before the trip.</h3><p>A licensed veterinarian examines your puppy before travel, and your personal Advocate walks you through the results and gets you ready for arrival.</p><div class="pp-chips"><span>Licensed-vet exam</span><span>One Advocate, start to finish</span></div></div></article>
-<article class="pp-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+      <div><p class="pp-kick">Step 3 · Prepare</p><h3>A vet check-up before the trip.</h3><p>A licensed veterinarian examines your puppy before travel, and your personal Advocate walks you through the results and gets you ready for arrival.</p><button class="pp-more" type="button" aria-expanded="false" aria-controls="more-3">Learn more</button></div>
+      <div class="pp-over" id="more-3" aria-hidden="true" inert><div><h4>Prepare: the details</h4><ul><li>Your Customer Advocate locks in travel dates around your puppy’s age and exam, with updates by phone, SMS and email.</li><li>3–5 days before travel, a licensed vet checks heart, lungs, gut, joints, eyes, ears, skin and vaccines, runs a fecal test and signs a health certificate.</li><li>Findings go into a Veterinary Health Report we review and explain to you. If anything needs attention, travel waits.</li></ul><button class="pp-close" type="button">Close</button></div></div></article>
+<article class="pp-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4">
       <img src="/our-process/img/puppy-in-cabin.webp" alt="A Pomeranian puppy in an in-cabin carrier" width="640" height="480" loading="lazy" />
-      <div><p class="pp-kick">Step 4 · Travel</p><h3>Your puppy never travels alone.</h3><p>Choose pick-up, a ground nanny, a flight nanny or an in-cabin chaperone. You get updates the whole way and a photo moment at the door.</p><div class="pp-chips"><span>Four ways home</span><span>Updates every step</span></div></div></article>
-<article class="pp-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+      <div><p class="pp-kick">Step 4 · Travel</p><h3>Your puppy never travels alone.</h3><p>Choose pick-up, a ground nanny, a flight nanny or an in-cabin chaperone. You get updates the whole way and a photo moment at the door.</p><button class="pp-more" type="button" aria-expanded="false" aria-controls="more-4">Learn more</button></div>
+      <div class="pp-over" id="more-4" aria-hidden="true" inert><div><h4>Travel: the details</h4><ul><li>Four ways home: free local pick-up, pampered ground delivery, standard air travel with a flight nanny, or Airpanion in-cabin.</li><li>Travel is billed once dates are set, with SMS and email updates the whole way.</li><li>Health records travel with your puppy, and a digital copy lives in your PetPay account.</li><li>Upload your delivery photo to confirm arrival and start your Health Guarantee.</li></ul><button class="pp-close" type="button">Close</button></div></div></article>
+<article class="pp-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5">
       <img src="/our-process/img/golden-woman.jpg" alt="A woman petting her golden retriever" width="640" height="480" loading="lazy" />
-      <div><p class="pp-kick">Step 5 · Home</p><h3>We’re still with you after day one.</h3><p>Your puppy comes home with a 3-year Health Guarantee, extendable to age 10, plus a month of pet insurance. Our team is a call away whenever you have a question.</p><div class="pp-chips"><span>Up to 10 years of coverage</span><span>Support when you need it</span></div></div></article>
+      <div><p class="pp-kick">Step 5 · Home</p><h3>We’re still with you after day one.</h3><p>Your puppy comes home with a 3-year Health Guarantee, extendable to age 10, plus a month of pet insurance. Our team is a call away whenever you have a question.</p><button class="pp-more" type="button" aria-expanded="false" aria-controls="more-5">Learn more</button></div>
+      <div class="pp-over" id="more-5" aria-hidden="true" inert><div><h4>Home: the details</h4><ul><li>Call MetLife to activate your included month of pet insurance, with no waiting period.</li><li>Book a wellness exam within 72 hours and bring your puppy’s health records.</li><li>Year 1 is backed by your breeder and years 2–3 by PetPay. Extend to the 10th birthday at checkout.</li><li>Common arrival ailments are covered by our Prescription Reimbursement Program.</li></ul><button class="pp-close" type="button">Close</button></div></div></article>
 </div>
     </div>
     <p class="pp-fine">Typically one to three weeks from reserve to arrival. Puppies must be at least 8 weeks old before release. 3-year Health Guarantee included with every puppy; most breeds can extend to age 10 at checkout. MetLife: NH, NY, RI, SC and TN residents excluded.</p>
@@ -598,18 +629,25 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   if (window.jQuery && jQuery.fn.HSMegaMenu) jQuery('.js-mega-menu').HSMegaMenu({ event: 'hover', pageContainer: jQuery('.container'), breakpoint: 991, hideTimeOut: 0 });
+  function closeOver(p) { var o = p.querySelector('.pp-over'), m = p.querySelector('.pp-more'); p.classList.remove('open'); o.setAttribute('aria-hidden','true'); o.inert = true; m.setAttribute('aria-expanded','false'); }
+  [].slice.call(document.querySelectorAll('.pp-panel')).forEach(function (p) {
+    var o = p.querySelector('.pp-over'), m = p.querySelector('.pp-more');
+    m.addEventListener('click', function () { p.classList.add('open'); o.setAttribute('aria-hidden','false'); o.inert = false; m.setAttribute('aria-expanded','true'); o.querySelector('.pp-close').focus({preventScroll:true}); });
+    o.querySelector('.pp-close').addEventListener('click', function () { closeOver(p); m.focus({preventScroll:true}); });
+    p.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeOver(p); m.focus({preventScroll:true}); } });
+  });
   var tabs = [].slice.call(document.querySelectorAll('.pp-step'));
   function show(t, focus) {
     tabs.forEach(function (x) {
       var on = x === t;
       x.setAttribute('aria-selected', on); x.classList.toggle('on', on); x.tabIndex = on ? 0 : -1;
-      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      var p = document.getElementById(x.getAttribute('aria-controls')); if (on) p.setAttribute('data-on',''); else { p.removeAttribute('data-on'); closeOver(p); }
     });
     if (focus) t.focus();
   }
   tabs.forEach(function (t, i) {
     t.tabIndex = i === 0 ? 0 : -1;
-    t.addEventListener('click', function () { show(t); if (window.matchMedia('(max-width:1000px)').matches) document.querySelector('#steps').scrollIntoView({behavior:'smooth',block:'start'}); });
+    t.addEventListener('click', function () { show(t); });
     t.addEventListener('keydown', function (e) {
       var n = tabs.indexOf(t);
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); show(tabs[(n + 1) % tabs.length], true); }
