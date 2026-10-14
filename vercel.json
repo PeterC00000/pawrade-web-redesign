@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/our-process/", "permanent": false }
+  ]
+}
